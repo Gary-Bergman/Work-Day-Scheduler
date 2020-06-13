@@ -20,6 +20,7 @@ var twoPM = moment().format('14');
 var threePM = moment().format('15');
 var fourPM = moment().format('16');
 var fivePM = moment().format('17');
+console.log(nineAM, "hello!")
 
 // function testFunc() {
 //     console.log(document.getElementById("myTextArea").value);
@@ -49,145 +50,158 @@ currentDay.text(day);
 
 // write functions for past, present, and future
 
-
+var descript = document.getElementsByClassName("description");
+// console.log(descript[i], "this one!");
 // need to write a loop to ++ checkedTime
+// This code impliments a dual fashion wherein I'm both checking an id to add a class to as well as using the literal number of that id (09, 10, 11 etc) to compare to the current time!
+
+for (var i = 0; i < descript.length; i++) {
+    console.log(descript[i].getAttribute("id"));
+    if (parseInt(currentTime) > parseInt(descript[i].getAttribute("id"))) {
+        $("#" + descript[i].getAttribute("id")).addClass('past');
+        // return true;
+    } else if (parseInt(currentTime) == parseInt(descript[i].getAttribute("id"))) {
+        $("#" + descript[i].getAttribute("id")).addClass('present')
+    } else {
+        $("#" + descript[i].getAttribute("id")).addClass('future')
+    }
+    console.log(descript[i], "this one!");
+};
 
 // function checkTime() {
-//     var timeIndexed;
-//     var timeArray = [09, 10, 11, 12, 13, 14, 15, 16, 17];
-//     timeIndexed = timeArray[i]
-//     for (var i = 0; i < 9; i++) {
-//         if (parseInt(currentTime) > timeArray[i]) {
-//             $(timeIndexed).addClass('past')
-//         } else if (parseInt(currentTime) == timeArray[i]) {
-//             $(timeIndexed).addClass('present')
-//         } else {
-//             $(timeIndexed).addClass('future')
-//         }
+// timeIndexed = timeArray[i]
+// for (var i = 0; i < 9; i++) {
+//     if (parseInt(currentTime) > timeArray[i]) {
+//         $(".timeblock").addClass('past')
+//     } else if (parseInt(currentTime) == timeArray[i]) {
+//         $(".timeblock").addClass('present')
+//     } else {
+//         $(".timeblock").addClass('future')
 //     }
 // }
-// return checkTime();
+// }
+// checkTime();
 
-function checkTime() {
-    if (parseInt(currentTime) > parseInt(nineAM)) {
-        $('#nineAM').addClass('past')
-        return true;
-    } else if (parseInt(currentTime) == parseInt(tenAM)) {
-        $('#nineAM').addClass('present')
-    } else {
-        $('#nineAM').addClass('future')
-    }
-};
-checkTime();
+// function checkTime() {
+//     if (parseInt(currentTime) > parseInt(nineAM)) {
+//         $('#nineAM').addClass('past')
+//         // return true;
+//     } else if (parseInt(currentTime) == parseInt(tenAM)) {
+//         $('#nineAM').addClass('present')
+//     } else {
+//         $('#nineAM').addClass('future')
+//     }
+// };
+// checkTime();
 
-function checkTime1() {
-    if (parseInt(currentTime) > parseInt(tenAM)) {
-        $('#tenAM').addClass('past')
-        return true;
-    } else if (parseInt(currentTime) == parseInt(tenAM)) {
-        $('#tenAM').addClass('present')
-    } else {
-        $('#tenAM').addClass('future')
-    }
-};
-checkTime1();
-
-
-function checkTime2() {
-    if (parseInt(currentTime) > parseInt(elevenAM)) {
-        $('#elevenAM').addClass('past')
-        return true;
-    } else if (parseInt(currentTime) == parseInt(elevenAM)) {
-        $('#elevenAM').addClass('present')
-    } else {
-        $('#elevenAM').addClass('future')
-    }
-}
-
-checkTime2();
-
-function checkTime3() {
-    if (parseInt(currentTime) > parseInt(twelvePM)) {
-        $('#twelvePM').addClass('past')
-        return true;
-    } else if (parseInt(currentTime) == parseInt(twelvePM)) {
-        $('#twelvePM').addClass('present')
-    } else {
-        $('#twelvePM').addClass('future')
-    }
-};
-
-checkTime3();
+// function checkTime1() {
+//     if (parseInt(currentTime) > parseInt(tenAM)) {
+//         $('#tenAM').addClass('past')
+//         return true;
+//     } else if (parseInt(currentTime) == parseInt(tenAM)) {
+//         $('#tenAM').addClass('present')
+//     } else {
+//         $('#tenAM').addClass('future')
+//     }
+// };
+// checkTime1();
 
 
-function checkTime4() {
-    if (parseInt(currentTime) > parseInt(onePM)) {
-        $('#onePM').addClass('past')
-        return true;
-    } else if (parseInt(currentTime) == parseInt(onePM)) {
-        $('#onePM').addClass('present')
-    } else {
-        $('#onePM').addClass('future')
-    }
-};
+// function checkTime2() {
+//     if (parseInt(currentTime) > parseInt(elevenAM)) {
+//         $('#elevenAM').addClass('past')
+//         return true;
+//     } else if (parseInt(currentTime) == parseInt(elevenAM)) {
+//         $('#elevenAM').addClass('present')
+//     } else {
+//         $('#elevenAM').addClass('future')
+//     }
+// }
 
-checkTime4();
+// checkTime2();
 
+// function checkTime3() {
+//     if (parseInt(currentTime) > parseInt(twelvePM)) {
+//         $('#twelvePM').addClass('past')
+//         return true;
+//     } else if (parseInt(currentTime) == parseInt(twelvePM)) {
+//         $('#twelvePM').addClass('present')
+//     } else {
+//         $('#twelvePM').addClass('future')
+//     }
+// };
 
-function checkTime5() {
-    if (parseInt(currentTime) > parseInt(twoPM)) {
-        $('#twoPM').addClass('past')
-        return true;
-    } else if (parseInt(currentTime) == parseInt(twoPM)) {
-        $('#twoPM').addClass('present')
-    } else {
-        $('#twoPM').addClass('future')
-    }
-};
-
-checkTime5();
-
-
-function checkTime6() {
-    if (parseInt(currentTime) > parseInt(threePM)) {
-        $('#threePM').addClass('past')
-        return true;
-    } else if (parseInt(currentTime) == parseInt(threePM)) {
-        $('#threePM').addClass('present')
-    } else {
-        $('#threePM').addClass('future')
-    }
-};
-
-checkTime6();
+// checkTime3();
 
 
-function checkTime7() {
-    if (parseInt(currentTime) > parseInt(fourPM)) {
-        $('#fourPM').addClass('past')
-        return true;
-    } else if (parseInt(currentTime) == parseInt(fourPM)) {
-        $('#fourPM').addClass('present')
-    } else {
-        $('#fourPM').addClass('future')
-    }
-};
+// function checkTime4() {
+//     if (parseInt(currentTime) > parseInt(onePM)) {
+//         $('#onePM').addClass('past')
+//         return true;
+//     } else if (parseInt(currentTime) == parseInt(onePM)) {
+//         $('#onePM').addClass('present')
+//     } else {
+//         $('#onePM').addClass('future')
+//     }
+// };
 
-checkTime7();
+// checkTime4();
 
 
-function checkTime8() {
-    if (parseInt(currentTime) > parseInt(fivePM)) {
-        $('#fivePM').addClass('past')
-        return true;
-    } else if (parseInt(currentTime) == parseInt(fivePM)) {
-        $('#fivePM').addClass('present')
-    } else {
-        $('#fivePM').addClass('future')
-    }
-};
+// function checkTime5() {
+//     if (parseInt(currentTime) > parseInt(twoPM)) {
+//         $('#twoPM').addClass('past')
+//         return true;
+//     } else if (parseInt(currentTime) == parseInt(twoPM)) {
+//         $('#twoPM').addClass('present')
+//     } else {
+//         $('#twoPM').addClass('future')
+//     }
+// };
 
-checkTime8();
+// checkTime5();
+
+
+// function checkTime6() {
+//     if (parseInt(currentTime) > parseInt(threePM)) {
+//         $('#threePM').addClass('past')
+//         return true;
+//     } else if (parseInt(currentTime) == parseInt(threePM)) {
+//         $('#threePM').addClass('present')
+//     } else {
+//         $('#threePM').addClass('future')
+//     }
+// };
+
+// checkTime6();
+
+
+// function checkTime7() {
+//     if (parseInt(currentTime) > parseInt(fourPM)) {
+//         $('#fourPM').addClass('past')
+//         return true;
+//     } else if (parseInt(currentTime) == parseInt(fourPM)) {
+//         $('#fourPM').addClass('present')
+//     } else {
+//         $('#fourPM').addClass('future')
+//     }
+// };
+
+// checkTime7();
+
+
+// function checkTime8() {
+//     if (parseInt(currentTime) > parseInt(fivePM)) {
+//         $('#fivePM').addClass('past')
+//         return true;
+//     } else if (parseInt(currentTime) == parseInt(fivePM)) {
+//         $('#fivePM').addClass('present')
+//     } else {
+//         $('#fivePM').addClass('future')
+//     }
+// };
+
+// checkTime8();
 
 // create onclick function to turn on saves
 
@@ -232,6 +246,10 @@ checkTime8();
 // var inputValue = document.getElementById("inputValue")
 
 // localStorage.setItem("name", "Gary");
+$(".saveBtn").on("click", function () {
+    localStorage.setItem("keyInput", text);
+    console.log(localStorage.getItem("keyInput"));
+})
 
 // console.log(localStorage.getItem("name"));
 
