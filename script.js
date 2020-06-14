@@ -4,56 +4,12 @@ var currentDay = $("#currentDay");
 var day = moment().format("MMM Do YY");
 var currentTime = moment().format('HH');
 
-var testText = $(".description1").text();
-
-var textValue = "";
-// console.log(text);
-
-var textNine = $("#nineAM").val;
-
-var nineAM = moment().format('09');
-var tenAM = moment().format('10');
-var elevenAM = moment().format('11');
-var twelvePM = moment().format('12');
-var onePM = moment().format('13');
-var twoPM = moment().format('14');
-var threePM = moment().format('15');
-var fourPM = moment().format('16');
-var fivePM = moment().format('17');
-
-
-// function testFunc() {
-//     console.log(document.getElementById("myTextArea").value);
-// };
-
-var timeIndexed;
-var timeArray = [09, 10, 11, 12, 13, 14, 15, 16, 17];
-// var nineAM = timeArray[i];
-// var tenAM = timeArray[1];
-// var elevenAM = timeArray[2];
-// var twelvePM = timeArray[3];
-// var onePM = timeArray[4];
-// var twoPM = timeArray[5];
-// var threePM = timeArray[6];
-// var fourPM = timeArray[7];
-// var fivePM = timeArray[8];
-
-
-
-// console.log(nineAM)
-
-
 // Fill in current day in header
 currentDay.text(day);
 
-
-// write functions for past, present, and future
-
+// grabs all textareas
 var descript = document.getElementsByClassName("description");
-// console.log(descript[i], "this one!");
-// need to write a loop to ++ checkedTime
 // This code impliments a dual fashion wherein I'm both checking an id to add a class to as well as using the literal number of that id (09, 10, 11 etc) to compare to the current time!
-
 for (var i = 0; i < descript.length; i++) {
     // console.log(descript[i].getAttribute("id"));
     if (parseInt(currentTime) > parseInt(descript[i].getAttribute("id"))) {
@@ -66,184 +22,10 @@ for (var i = 0; i < descript.length; i++) {
     }
 };
 
-// function checkTime() {
-// timeIndexed = timeArray[i]
-// for (var i = 0; i < 9; i++) {
-//     if (parseInt(currentTime) > timeArray[i]) {
-//         $(".timeblock").addClass('past')
-//     } else if (parseInt(currentTime) == timeArray[i]) {
-//         $(".timeblock").addClass('present')
-//     } else {
-//         $(".timeblock").addClass('future')
-//     }
-// }
-// }
-// checkTime();
+// localStorage get - Short form
+var arrayInput = JSON.parse(localStorage.getItem("keyInput")) || [];
 
-// function checkTime() {
-//     if (parseInt(currentTime) > parseInt(nineAM)) {
-//         $('#nineAM').addClass('past')
-//         // return true;
-//     } else if (parseInt(currentTime) == parseInt(tenAM)) {
-//         $('#nineAM').addClass('present')
-//     } else {
-//         $('#nineAM').addClass('future')
-//     }
-// };
-// checkTime();
-
-// function checkTime1() {
-//     if (parseInt(currentTime) > parseInt(tenAM)) {
-//         $('#tenAM').addClass('past')
-//         return true;
-//     } else if (parseInt(currentTime) == parseInt(tenAM)) {
-//         $('#tenAM').addClass('present')
-//     } else {
-//         $('#tenAM').addClass('future')
-//     }
-// };
-// checkTime1();
-
-
-// function checkTime2() {
-//     if (parseInt(currentTime) > parseInt(elevenAM)) {
-//         $('#elevenAM').addClass('past')
-//         return true;
-//     } else if (parseInt(currentTime) == parseInt(elevenAM)) {
-//         $('#elevenAM').addClass('present')
-//     } else {
-//         $('#elevenAM').addClass('future')
-//     }
-// }
-
-// checkTime2();
-
-// function checkTime3() {
-//     if (parseInt(currentTime) > parseInt(twelvePM)) {
-//         $('#twelvePM').addClass('past')
-//         return true;
-//     } else if (parseInt(currentTime) == parseInt(twelvePM)) {
-//         $('#twelvePM').addClass('present')
-//     } else {
-//         $('#twelvePM').addClass('future')
-//     }
-// };
-
-// checkTime3();
-
-
-// function checkTime4() {
-//     if (parseInt(currentTime) > parseInt(onePM)) {
-//         $('#onePM').addClass('past')
-//         return true;
-//     } else if (parseInt(currentTime) == parseInt(onePM)) {
-//         $('#onePM').addClass('present')
-//     } else {
-//         $('#onePM').addClass('future')
-//     }
-// };
-
-// checkTime4();
-
-
-// function checkTime5() {
-//     if (parseInt(currentTime) > parseInt(twoPM)) {
-//         $('#twoPM').addClass('past')
-//         return true;
-//     } else if (parseInt(currentTime) == parseInt(twoPM)) {
-//         $('#twoPM').addClass('present')
-//     } else {
-//         $('#twoPM').addClass('future')
-//     }
-// };
-
-// checkTime5();
-
-
-// function checkTime6() {
-//     if (parseInt(currentTime) > parseInt(threePM)) {
-//         $('#threePM').addClass('past')
-//         return true;
-//     } else if (parseInt(currentTime) == parseInt(threePM)) {
-//         $('#threePM').addClass('present')
-//     } else {
-//         $('#threePM').addClass('future')
-//     }
-// };
-
-// checkTime6();
-
-
-// function checkTime7() {
-//     if (parseInt(currentTime) > parseInt(fourPM)) {
-//         $('#fourPM').addClass('past')
-//         return true;
-//     } else if (parseInt(currentTime) == parseInt(fourPM)) {
-//         $('#fourPM').addClass('present')
-//     } else {
-//         $('#fourPM').addClass('future')
-//     }
-// };
-
-// checkTime7();
-
-
-// function checkTime8() {
-//     if (parseInt(currentTime) > parseInt(fivePM)) {
-//         $('#fivePM').addClass('past')
-//         return true;
-//     } else if (parseInt(currentTime) == parseInt(fivePM)) {
-//         $('#fivePM').addClass('present')
-//     } else {
-//         $('#fivePM').addClass('future')
-//     }
-// };
-
-// checkTime8();
-
-// create onclick function to turn on saves
-
-// $(".saveBtn").on("click", function () {
-//     console.log(text);
-
-
-//     // console.log(text);
-//     // textValue += $(this).val();
-//     // console.log(textNine);
-//     // $("textValue").text(textValue);
-//     // var textField = $(this).parent().children("description");
-// });
-
-
-
-// $(document).ready(function () {
-//     var savesnotesbtn = document.getElementById("savenotesbtn");
-
-//     //FILL TEXT AREAS WITH NOTES
-//     for (var i = 1; i < 11; i++) {
-//       $("#note" + i + "input").val(localStorage.getItem("note" + i));
-//     }
-
-//     function saveNotes() {
-//       //Change styles of button
-//       $("#savenotesbtn").removeClass("notSaved").addClass("Saved");
-//       // Save data to localstorage
-//       for (var i = 1; i < 11; i++) {
-//         localStorage.setItem("note" + i, $("#note" + i + "input").val());
-//       }
-//     };
-//     savesnotesbtn.addEventListener("click", saveNotes);
-// });
-
-
-
-
-// // localStorage
-
-// var inputKey = document.getElementById("inputKey")
-// var inputValue = document.getElementById("inputValue")
-
-// localStorage.setItem("name", "Gary");
+// localStorage
 $(".saveBtn").on("click", function () {
     var text = $(this).siblings("textarea").val();
     var id = $(this).siblings("textarea").attr("id");
@@ -251,12 +33,7 @@ $(".saveBtn").on("click", function () {
     // Object has property-value pair
     arrayInput.push({ notes: text, idNum: id });
     localStorage.setItem("keyInput", JSON.stringify(arrayInput));
-    // console.log(localStorage.getItem("keyInput"));
 })
-
-// Global
-// Short form
-var arrayInput = JSON.parse(localStorage.getItem("keyInput")) || [];
 
 // Take note from storage and display it on textfield AFTER refresh is hit. Go into the stored array and get the property-value to display on the text area. 
 function displayNotes() {
@@ -271,40 +48,3 @@ function displayNotes() {
     }
 };
 displayNotes();
-
-// Store in seperate notes file
-// Long notation for getting a value from a key:
-// localStorage.getItem(localStorage.key("keyInput"))
-
-
-// localStorage.setItem("Age", "26");
-// var userAge = localStorage.getItem(localStorage.key("Age"));
-// userAge = "26";
-
-// // Get user age into an integer:
-// userAge = parseInt(userAge);
-// Long form 
-// var arrayInput = JSON.parse(localStorage.getItem("keyInput"));
-// if (arrayInput == null) {
-//     arrayInput = [];
-// };t
-
-
-
-
-
-// console.log(localStorage.getItem("name"));
-
-// // console.log(localStorage.key(0));
-
-
-
-
-// $(".saveBtn").on("click", function () {
-//     if (text !== "") {
-//         console.log(text)
-//     }
-//     // var value = inputValue.val();
-//     // console.log(key);
-//     // console.log(value);
-// })
