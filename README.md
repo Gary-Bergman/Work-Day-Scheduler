@@ -1,5 +1,5 @@
 # Work-Day-Scheduler
-ADD IMAGE!
+<img src="Images/Schedulerscreenshot.png" width="700" >
 
 This project is a work day scheduler which allows a user to input notes or reminders for each hour of a 9-5 workday. The scheduler will save the note upon click of the save button, and keep it on the page even if the page is refreshed. To clear the schedule, simply erase the note and save again.
 
